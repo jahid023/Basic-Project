@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="start-screen" class="screen active">
+            <h1>Welcome to the Quiz</h1>
+            <button id="start-btn">Start Quiz</button>
+        </div>
+        <div id="quiz-screen" class="screen">
+            <h2 id="question">Question will appear here</h2>
+            <p id="timer">Time left: 30s</p>
+            <div id="options">
+                <button class="option">Option 1</button>
+                <button class="option">Option 2</button>
+                <button class="option">Option 3</button>
+                <button class="option">Option 4</button>
+            </div>
+        </div>
+        <div id="result-screen" class="screen">
+            <h2>Quiz Completed!</h2>
+            <p id="score">Your score: 0</p>
+            <button id="restart-btn">Restart Quiz</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
