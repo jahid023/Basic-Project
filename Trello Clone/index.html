@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskNest - Task Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>TaskNest</h1>
+            <nav>
+                <button class="header-btn">New Board</button>
+                <button class="header-btn">Settings</button>
+            </nav>
+        </header>
+
+        <main class="kanban-board">
+            <div class="column">
+                <div class="column-header">
+                    <h2>To Do</h2>
+                    <button class="add-card-btn">+ Add Card</button>
+                </div>
+                <div class="card-list">
+                    <div class="task-card">
+                        <div class="card-header">
+                            <span class="priority-tag high">High</span>
+                        </div>
+                        <h3>Design Landing Page</h3>
+                        <p>Complete the UI/UX design for the landing page...</p>
+                    </div>
+                    <div class="task-card">
+                        <div class="card-header">
+                            <span class="priority-tag medium">Medium</span>
+                        </div>
+                        <h3>Backend Setup</h3>
+                        <p>Configure the server and database...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="column-header">
+                    <h2>In Progress</h2>
+                    <button class="add-card-btn">+ Add Card</button>
+                </div>
+                <div class="card-list">
+                    <div class="task-card">
+                        <div class="card-header">
+                            <span class="priority-tag low">Low</span>
+                        </div>
+                        <h3>Documentation</h3>
+                        <p>Update API documentation...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="column-header">
+                    <h2>Done</h2>
+                    <button class="add-card-btn">+ Add Card</button>
+                </div>
+                <div class="card-list">
+                    <div class="task-card">
+                        <div class="card-header">
+                            <span class="priority-tag medium">Medium</span>
+                        </div>
+                        <h3>Frontend Structure</h3>
+                        <p>Set up HTML and CSS structure...</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="add-column-btn">+ Add Column</button>
+        </main>
+
+        <aside class="chat-panel">
+            <button class="chat-toggle-btn">Chat</button>
+            <div class="chat-content">
+                <div class="chat-header">
+                    <h3>Team Chat</h3>
+                    <button class="close-chat-btn">×</button>
+                </div>
+                <div class="message-list">
+                    <div class="message user">
+                        <img src="https://via.placeholder.com/32" alt="User Avatar" class="user-avatar">
+                        <div class="message-content">
+                            <span class="message-text">Let's start with the design phase</span>
+                            <span class="message-time">10:30 AM</span>
+                        </div>
+                    </div>
+                    <div class="message other">
+                        <img src="https://via.placeholder.com/32" alt="Other User Avatar" class="user-avatar">
+                        <div class="message-content">
+                            <span class="message-text">Great! I'll work on the wireframes</span>
+                            <span class="message-time">10:32 AM</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="message-input">
+                    <input type="text" placeholder="Type a message...">
+                    <button class="send-btn">Send</button>
+                </div>
+            </div>
+        </aside>
+    </div>
+</body>
+</html>
