@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PulsePanel - Products</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">PulsePanel</div>
+        </div>
+        <ul class="sidebar-nav">
+            <li class="sidebar-item">
+                <i class="sidebar-icon fas fa-home"></i>
+                <a href="index.html">Dashboard</a>
+            </li>
+            <li class="sidebar-item">
+                <i class="sidebar-icon fas fa-users"></i>
+                <a href="users.html">Users</a>
+            </li>
+            <li class="sidebar-item active">
+                <i class="sidebar-icon fas fa-box"></i>
+                <a href="products.html">Products</a>
+            </li>
+            <li class="sidebar-item">
+                <i class="sidebar-icon fas fa-chart-line"></i>
+                <a href="reports.html">Reports</a>
+            </li>
+            <li class="sidebar-item">
+                <i class="sidebar-icon fas fa-cog"></i>
+                <a href="settings.html">Settings</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <button id="menuToggle" class="btn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" class="search-input" placeholder="Search products...">
+        </div>
+        <div class="top-bar-right">
+            <button class="btn btn-primary" data-modal="addProductModal">
+                <i class="fas fa-plus"></i> Add Product
+            </button>
+            <button class="btn">
+                <i class="fas fa-bell"></i>
+            </button>
+            <div class="user-profile">
+                <img src="../assets/default-avatar.png" alt="User" class="user-avatar">
+                <span class="user-name">Admin</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="card">
+            <div class="table-controls">
+                <div class="filter-group">
+                    <select class="form-select" id="sortSelect">
+                        <option value="name">Sort by Name</option>
+                        <option value="price">Sort by Price</option>
+                        <option value="stock">Sort by Stock</option>
+                    </select>
+                </div>
+            </div>
+            <div id="productGrid" class="product-grid">
+                <!-- Products will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Product Modal -->
+    <div id="addProductModal" class="modal">
+        <div class="modal-content">
+            <h2>Add New Product</h2>
+            <form class="form">
+                <div class="form-group">
+                    <label for="productName">Product Name</label>
+                    <input type="text" id="productName" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="productPrice">Price</label>
+                    <input type="number" id="productPrice" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="productStock">Stock</label>
+                    <input type="number" id="productStock" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="productImage">Product Image</label>
+                    <input type="file" id="productImage" class="form-input" accept="image/*">
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Add Product</button>
+                    <button type="button" class="btn btn-secondary modal-close">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

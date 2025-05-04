@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PulsePanel - Settings</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">PulsePanel</div>
+        </div>
+        <ul class="sidebar-nav">
+            <li class="sidebar-item">
+                <i class="sidebar-icon fas fa-home"></i>
+                <a href="index.html">Dashboard</a>
+            </li>
+            <li class="sidebar-item">
+                <i class="sidebar-icon fas fa-users"></i>
+                <a href="users.html">Users</a>
+            </li>
+            <li class="sidebar-item">
+                <i class="sidebar-icon fas fa-box"></i>
+                <a href="products.html">Products</a>
+            </li>
+            <li class="sidebar-item">
+                <i class="sidebar-icon fas fa-chart-line"></i>
+                <a href="reports.html">Reports</a>
+            </li>
+            <li class="sidebar-item active">
+                <i class="sidebar-icon fas fa-cog"></i>
+                <a href="settings.html">Settings</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <button id="menuToggle" class="btn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" class="search-input" placeholder="Search settings...">
+        </div>
+        <div class="top-bar-right">
+            <button class="btn">
+                <i class="fas fa-bell"></i>
+            </button>
+            <div class="user-profile">
+                <img src="../assets/default-avatar.png" alt="User" class="user-avatar">
+                <span class="user-name">Admin</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Profile Settings -->
+        <div class="card">
+            <h2>Profile Settings</h2>
+            <form class="form" id="profileForm">
+                <div class="form-group">
+                    <label for="profileName">Full Name</label>
+                    <input type="text" id="profileName" class="form-input" value="Admin User">
+                </div>
+                <div class="form-group">
+                    <label for="profileEmail">Email</label>
+                    <input type="email" id="profileEmail" class="form-input" value="admin@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="profilePassword">Password</label>
+                    <input type="password" id="profilePassword" class="form-input" placeholder="Change password">
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Notification Settings -->
+        <div class="card">
+            <h2>Notification Settings</h2>
+            <div class="notification-settings">
+                <div class="notification-item">
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                    <span>Email Notifications</span>
+                </div>
+                <div class="notification-item">
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                    <span>Push Notifications</span>
+                </div>
+                <div class="notification-item">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                    <span>Activity Reports</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Theme Settings -->
+        <div class="card">
+            <h2>Theme Settings</h2>
+            <div class="theme-settings">
+                <div class="theme-item">
+                    <label class="theme-switch">
+                        <input type="checkbox" id="themeToggle">
+                        <span class="slider"></span>
+                    </label>
+                    <span>Dark Mode</span>
+                </div>
+                <div class="theme-item">
+                    <label for="primaryColor">Primary Color:</label>
+                    <input type="color" id="primaryColor" value="#2563eb">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

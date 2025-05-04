@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PulsePanel - Users</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">PulsePanel</div>
+        </div>
+        <ul class="sidebar-nav">
+            <li class="sidebar-item">
+                <i class="sidebar-icon fas fa-home"></i>
+                <a href="index.html">Dashboard</a>
+            </li>
+            <li class="sidebar-item active">
+                <i class="sidebar-icon fas fa-users"></i>
+                <a href="users.html">Users</a>
+            </li>
+            <li class="sidebar-item">
+                <i class="sidebar-icon fas fa-box"></i>
+                <a href="products.html">Products</a>
+            </li>
+            <li class="sidebar-item">
+                <i class="sidebar-icon fas fa-chart-line"></i>
+                <a href="reports.html">Reports</a>
+            </li>
+            <li class="sidebar-item">
+                <i class="sidebar-icon fas fa-cog"></i>
+                <a href="settings.html">Settings</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <button id="menuToggle" class="btn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" class="search-input" placeholder="Search users...">
+        </div>
+        <div class="top-bar-right">
+            <button class="btn btn-primary" data-modal="addUserModal">
+                <i class="fas fa-plus"></i> Add User
+            </button>
+            <button class="btn">
+                <i class="fas fa-bell"></i>
+            </button>
+            <div class="user-profile">
+                <img src="../assets/default-avatar.png" alt="User" class="user-avatar">
+                <span class="user-name">Admin</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="card">
+            <div class="table-controls">
+                <div class="filter-group">
+                    <select class="form-select">
+                        <option value="all">All Status</option>
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                    </select>
+                    <select class="form-select">
+                        <option value="all">All Roles</option>
+                        <option value="admin">Admin</option>
+                        <option value="user">User</option>
+                    </select>
+                </div>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="userTableBody">
+                    <!-- Users will be populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Add User Modal -->
+    <div id="addUserModal" class="modal">
+        <div class="modal-content">
+            <h2>Add New User</h2>
+            <form class="form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="role">Role</label>
+                    <select id="role" class="form-select">
+                        <option value="admin">Admin</option>
+                        <option value="user">User</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <select id="status" class="form-select">
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Add User</button>
+                    <button type="button" class="btn btn-secondary modal-close">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

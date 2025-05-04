@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PulsePanel - Reports</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">PulsePanel</div>
+        </div>
+        <ul class="sidebar-nav">
+            <li class="sidebar-item">
+                <i class="sidebar-icon fas fa-home"></i>
+                <a href="index.html">Dashboard</a>
+            </li>
+            <li class="sidebar-item">
+                <i class="sidebar-icon fas fa-users"></i>
+                <a href="users.html">Users</a>
+            </li>
+            <li class="sidebar-item">
+                <i class="sidebar-icon fas fa-box"></i>
+                <a href="products.html">Products</a>
+            </li>
+            <li class="sidebar-item active">
+                <i class="sidebar-icon fas fa-chart-line"></i>
+                <a href="reports.html">Reports</a>
+            </li>
+            <li class="sidebar-item">
+                <i class="sidebar-icon fas fa-cog"></i>
+                <a href="settings.html">Settings</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <button id="menuToggle" class="btn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" class="search-input" placeholder="Search reports...">
+        </div>
+        <div class="top-bar-right">
+            <button class="btn btn-primary" data-modal="exportModal">
+                <i class="fas fa-download"></i> Export
+            </button>
+            <button class="btn">
+                <i class="fas fa-bell"></i>
+            </button>
+            <div class="user-profile">
+                <img src="../assets/default-avatar.png" alt="User" class="user-avatar">
+                <span class="user-name">Admin</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Filter Section -->
+        <div class="card">
+            <h2>Report Filters</h2>
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="dateRange">Date Range:</label>
+                    <select id="dateRange" class="form-select">
+                        <option value="today">Today</option>
+                        <option value="week">This Week</option>
+                        <option value="month">This Month</option>
+                        <option value="custom">Custom Range</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="reportType">Report Type:</label>
+                    <select id="reportType" class="form-select">
+                        <option value="sales">Sales Report</option>
+                        <option value="inventory">Inventory Report</option>
+                        <option value="user">User Activity</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="card">
+            <h2>Sales Performance</h2>
+            <div class="charts-container">
+                <canvas id="salesChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Statistics Cards -->
+        <div class="card">
+            <h2>Key Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon bg-primary">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>1,234</h3>
+                        <p>Total Orders</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon bg-success">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>$56,789</h3>
+                        <p>Total Revenue</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon bg-warning">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>23%</h3>
+                        <p>Growth Rate</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon bg-danger">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>456</h3>
+                        <p>New Users</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Export Modal -->
+    <div id="exportModal" class="modal">
+        <div class="modal-content">
+            <h2>Export Report</h2>
+            <div class="export-options">
+                <button class="btn btn-primary" onclick="exportToCSV()">
+                    <i class="fas fa-file-csv"></i> Export to CSV
+                </button>
+                <button class="btn btn-primary" onclick="exportToPDF()">
+                    <i class="fas fa-file-pdf"></i> Export to PDF
+                </button>
+            </div>
+            <button class="modal-close btn btn-secondary">Close</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
